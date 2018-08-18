@@ -92,6 +92,10 @@ module Doorkeeper
       def pkce_supported?
         new.pkce_supported?
       end
+
+      def uses_pkce?
+        pkce_supported? && code_challenge.present?
+      end
     end
   end
 end
